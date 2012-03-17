@@ -1,4 +1,5 @@
-(function() {
+(function(exports) {
+  var NG = exports.NG || {};
   var jasmineEnv = jasmine.getEnv();
   jasmineEnv.updateInterval = 1000;
 
@@ -8,8 +9,5 @@
   jasmineEnv.specFilter = function(spec) {
     return trivialReporter.specFilter(spec);
   };
-
-  $(function() {
-    jasmineEnv.execute();
-  });
-})();​
+  NG.jasmineEnv = jasmineEnv;
+})(window);​
